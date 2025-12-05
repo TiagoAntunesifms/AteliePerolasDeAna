@@ -128,7 +128,7 @@ header#navbar {
   box-sizing: border-box;
   width: 100%;
   background-color: var(--color-background-hero); /* bg-[#FDCEE2] */
-  background-image: url(../img/img_hero.webp); 
+  background-image: url(../../img/img_hero.webp); 
   background-size: cover; 
   display: flex;
   align-items: center;
@@ -663,5 +663,6 @@ footer {
     display: flex !important;
   }
 }
+
 
 
