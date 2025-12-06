@@ -1,62 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Efeito Interno</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Efeito Interno</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
+  <!-- CONFIGURAÇÃO QUE FALTAVA!!! -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff6fbf',
+            pinkLight: '#ffd3ec',
+            pinkCandy: '#ff9fd8',
+            pinkSoft: '#ffe6f4',
+            creme: '#fff7f9',
+          },
+          fontFamily: {
+            title: ['Lilita One', 'cursive'],
+            body: ['Quicksand', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body>
-
-<div class="inner">
+<body class="font-body bg-primary">
 
 <!-- HEADER FIXO E FLUTUANTE -->
-<header class="topo-fixo fixed top-4 left-1/2 transform -translate-x-1/2 
-                flex items-center justify-between w-[90%] max-w-5xl 
-                px-6 py-3 z-50">
+<header class="fixed top-4 left-1/2 transform -translate-x-1/2 
+               flex items-center justify-between w-[90%] max-w-5xl 
+               px-6 py-3 z-50 bg-primary rounded-2xl shadow-lg">
 
-    <!-- LOGO -->
-    <div class="logo text-white text-3xl font-bold">
-        Pérolas de Ana
-    </div>
+  <!-- LOGO -->
+  <div class="logo text-white text-3xl font-title">
+    Logo
+  </div>
 
-    <!-- BARRA DE BUSCA -->
-    <div class="flex-1 px-6">
-        <input 
-            type="text" 
-            placeholder="Buscar..."
-            class="w-full px-4 py-2 rounded-full outline-none 
-            text-pink-700 placeholder-pink-400"
-        >
-    </div>
+  <!-- BARRA DE BUSCA -->
+  <div class="flex-1 px-6">
+    <input 
+      type="text" 
+      placeholder="Buscar..."
+      class="w-full px-4 py-2 rounded-full outline-none 
+      text-pink-700 placeholder-pink-400 border-2 border-pinkCandy bg-pinkSoft"
+    >
+  </div>
 
-    <!-- BOTÕES -->
-    <div class="flex gap-3">
+  <!-- BOTÕES -->
+  <div class="flex gap-3">
 
-        <button class="btn-topo flex items-center gap-2 px-4 py-2 rounded-full">
-            <i class="bi bi-box-arrow-in-right text-xl"></i> Entrar
-        </button>
+    <button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white font-title hover:bg-pinkCandy transition">
+      <i class="bi bi-box-arrow-in-right text-xl"></i> Entrar
+    </button>
 
-        <button class="btn-topo flex items-center gap-2 px-4 py-2 rounded-full">
-            <i class="bi bi-person-plus text-xl"></i> Cadastrar
-        </button>
+    <button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white font-title hover:bg-pinkCandy transition">
+      <i class="bi bi-person-plus text-xl"></i> Cadastrar
+    </button>
 
-    </div>
+  </div>
 </header>
 
-</div>
+<!-- ÁREA INTERNA COM EFEITO DE CAIXA -->
+<div class="inner"></div>
 
 </body>
 </html>
