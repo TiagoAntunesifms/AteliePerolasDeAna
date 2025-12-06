@@ -14,7 +14,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- CONFIGURAÇÃO QUE FALTAVA!!! -->
+  <!-- Config Tailwind -->
   <script>
     tailwind.config = {
       theme: {
@@ -35,47 +35,39 @@
     }
   </script>
 
-  <!-- CSS externo -->
+  <!-- CSS Externo -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="font-body bg-primary">
 
-<!-- HEADER FIXO E FLUTUANTE -->
-<header class="fixed top-4 left-1/2 transform -translate-x-1/2 
-               flex items-center justify-between w-[90%] max-w-5xl 
-               px-6 py-3 z-50 bg-primary rounded-2xl shadow-lg">
+  <!-- ÁREA INTERNA -->
+  <div class="inner">
 
-  <!-- LOGO -->
-  <div class="logo text-white text-3xl font-title">
-    Logo
-  </div>
+<!-- HEADER -->
+  <header class="topo-fixo">
+    
+    <div class="logo">Logo</div>
 
-  <!-- BARRA DE BUSCA -->
-  <div class="flex-1 px-6">
-    <input 
-      type="text" 
-      placeholder="Buscar..."
-      class="w-full px-4 py-2 rounded-full outline-none 
-      text-pink-700 placeholder-pink-400 border-2 border-pinkCandy bg-pinkSoft"
-    >
-  </div>
+    <div class="busca">
+      <input type="text" placeholder="Buscar...">
+    </div>
 
-  <!-- BOTÕES -->
-  <div class="flex gap-3">
+    <div class="acoes">
+      <button class="btn-topo">
+        <i class="bi bi-box-arrow-in-right"></i> Entrar
+      </button>
 
-    <button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white font-title hover:bg-pinkCandy transition">
-      <i class="bi bi-box-arrow-in-right text-xl"></i> Entrar
-    </button>
+      <button class="btn-topo">
+        <i class="bi bi-person-plus"></i> Cadastrar
+      </button>
+    </div>
 
-    <button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white font-title hover:bg-pinkCandy transition">
-      <i class="bi bi-person-plus text-xl"></i> Cadastrar
-    </button>
+  </header>
+
+
 
   </div>
-</header>
-
-<!-- ÁREA INTERNA COM EFEITO DE CAIXA -->
-<div class="inner"></div>
 
 </body>
 </html>
