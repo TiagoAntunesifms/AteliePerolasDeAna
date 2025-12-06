@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Efeito Interno</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efeito Interno</title>
 
-<style>
-    :root {
-        --primary: #ff6fbf;
-        --pinkLight: #ffd3ec;
-        --pinkCandy: #ff9fd8;
-    }
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    body {
-        margin: 0;
-        height: 100vh;
-        background: var(--primary);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 3%;
-        box-sizing: border-box;
-    }
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    .inner {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        background: linear-gradient(
-            to bottom,
-            #ffd3ec 0%,
-            #fff 20%
-        );
-        box-shadow:
-            inset 0 0 60px rgba(0, 0, 0, 0.35),
-            inset 0 0 120px rgba(0, 0, 0, 0.25),
-            inset 0 0 40px rgba(255, 255, 255, 0.4);
-    }
-</style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="inner"></div>
+<div class="inner">
+
+<!-- HEADER FIXO E FLUTUANTE -->
+<header class="topo-fixo fixed top-4 left-1/2 transform -translate-x-1/2 
+                flex items-center justify-between w-[90%] max-w-5xl 
+                px-6 py-3 z-50">
+
+    <!-- LOGO -->
+    <div class="logo text-white text-3xl font-bold">
+        Pérolas de Ana
+    </div>
+
+    <!-- BARRA DE BUSCA -->
+    <div class="flex-1 px-6">
+        <input 
+            type="text" 
+            placeholder="Buscar..."
+            class="w-full px-4 py-2 rounded-full outline-none 
+            text-pink-700 placeholder-pink-400"
+        >
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="flex gap-3">
+
+        <button class="btn-topo flex items-center gap-2 px-4 py-2 rounded-full">
+            <i class="bi bi-box-arrow-in-right text-xl"></i> Entrar
+        </button>
+
+        <button class="btn-topo flex items-center gap-2 px-4 py-2 rounded-full">
+            <i class="bi bi-person-plus text-xl"></i> Cadastrar
+        </button>
+
+    </div>
+</header>
+
+</div>
 
 </body>
 </html>
