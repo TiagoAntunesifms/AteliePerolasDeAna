@@ -7,9 +7,7 @@
   --pinkSoft: #ffe6f4;
 }
 
-/* =============================== */
-/* ESTRUTURA GERAL */
-/* =============================== */
+/* ================= ESTRUTURA GERAL ================= */
 body {
   margin: 0;
   height: 100vh;
@@ -21,128 +19,229 @@ body {
   box-sizing: border-box;
 }
 
-/* =============================== */
-/* CAIXA INTERNA */
-/* =============================== */
+/* ================= CAIXA INTERNA ================= */
 .inner {
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  background: linear-gradient(
-    to bottom,
-    #ffd3ec 0%,
-    #fff 20%
-  );
+  background: linear-gradient(to bottom, #ffd3ec 0%, #fff 20%);
   box-shadow:
     inset 0 0 60px rgba(0, 0, 0, 0.35),
     inset 0 0 120px rgba(0, 0, 0, 0.25),
     inset 0 0 40px rgba(255, 255, 255, 0.4);
-
   position: relative;
-  z-index: 1;
   overflow: hidden;
 }
 
-/* =============================== */
-/* ✅ HEADER BRANCO FLUTUANTE */
-/* =============================== */
+/* ================= HEADER ================= */
 .topo-fixo {
   position: fixed;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 10%;
+  left: 5%;
   width: 90%;
-  max-width: 900px;
-
+  height: 90px;
   background: white;
-  border-radius: 18px;
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.25),
-    inset 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+
+  padding: 0 32px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+/* ✅ HEADER ENCOLHIDO AO ROLAR */
+.topo-fixo.shrink {
+  height: 60px;
+  top: 4%;
+}
+
+/* ================= LOGO ================= */
+.logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  z-index: 10;
-  font-family: 'Lilita One', cursive;
+  height: 100%;
 }
 
-/* LOGO */
-.logo {
-  font-size: 1.8rem;
+.logo img {
+  width: 90px;
+}
+
+/* ================= MENU ================= */
+.menu-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  height: 100%;
+}
+
+/* ✅ LINKS COM BORDA ANIMADA DO CENTRO */
+.menu-principal a,
+.dropdown-btn {
+  border: none;
+  background: transparent;
   color: var(--primary);
+  font-family: 'Quicksand';
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  padding: 6px 0;
 }
 
-/* BUSCA */
+.menu-principal a::after,
+.dropdown-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.35s ease;
+  transform: translateX(-50%);
+}
+
+.menu-principal a:hover::after,
+.dropdown-btn:hover::after {
+  width: 100%;
+}
+
+/* ================= DROPDOWN COM ANIMAÇÃO ================= */
+.menu-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  min-width: 180px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: 0.3s ease;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.dropdown-menu a {
+  padding: 10px 18px;
+  display: block;
+  color: var(--primary);
+  font-weight: 100;
+}
+
+.dropdown-menu a:hover {
+  background: var(--pinkSoft);
+}
+
+/* ================= BUSCA CENTRAL ================= */
 .busca {
-  flex: 1;
-  padding: 0 20px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .busca input {
   width: 100%;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 2px solid var(--pinkCandy);
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--pinkCandy);
   outline: none;
-  background: #fff;
-  font-family: 'Quicksand', sans-serif;
 }
 
-/* BOTÕES */
+/* ================= BOTÕES ================= */
 .acoes {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
 }
 
 .btn-topo {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  border-radius: 999px;
+  padding: 8px 18px;
+  border-radius: 12px;
   border: none;
   background: var(--primary);
   color: white;
   cursor: pointer;
-  font-family: 'Lilita One', cursive;
+  font-family: 'Quicksand';
+  display: flex;
+  align-items: center;
+  gap: 6px;
   transition: 0.2s ease-in-out;
+  font-weight: 600;
 }
 
 .btn-topo:hover {
   background: #ff4aa8;
+  transform: translateY(-1px);
 }
 
-/* =============================== */
-/* ✅ MOBILE */
-/* =============================== */
+/* ================= HAMBURGUER ================= */
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   .topo-fixo {
-    width: 100%;
-    left: 0;
-    transform: none;
-    top: 0px;
-    border-radius: 0 0 0px 0px;
-    flex-direction: column;
-    gap: 14px;
-    padding: 16px 12px;
+    grid-template-columns: 1fr auto;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
   }
 
-  .logo {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-principal {
+    display: none;
+    flex-direction: column;
     width: 100%;
-    text-align: center;
-    font-size: 2rem;
+    margin-top: 12px;
+  }
+
+  .menu-principal.ativo {
+    display: flex;
   }
 
   .busca {
     width: 100%;
-    padding: 0;
   }
 
   .acoes {
     width: 100%;
     justify-content: center;
+  }
+
+  .topo-fixo.shrink {
+    height: auto;
   }
 }
