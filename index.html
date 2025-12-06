@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ateliê Pérolas de Ana</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -31,6 +34,7 @@
     }
   </script>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -40,20 +44,20 @@
 
     <header class="topo-fixo">
 
+      <!-- ✅ LOGO (LINHA 1 NO MOBILE) -->
       <div class="logo">
-        <img src="img/logotipo.svg">
+        <img src="img/logotipo.svg" alt="Bonecas da Vivi">
       </div>
 
-      <!-- ✅ BOTÃO HAMBURGUER -->
-      <button class="menu-toggle" id="menuToggle">
-        <i class="bi bi-list"></i>
-      </button>
-
+      <!-- ✅ MENU DESKTOP / MOBILE -->
       <nav class="menu-principal" id="menuPrincipal">
         <a href="#">Olá sou a Ana</a>
 
         <div class="menu-dropdown">
-          <button class="dropdown-btn">Produtos <i class="bi bi-chevron-down"></i></button>
+          <button class="dropdown-btn">
+            Produtos <i class="bi bi-chevron-down"></i>
+          </button>
+
           <div class="dropdown-menu">
             <a href="#">Bonecas de Pano</a>
             <a href="#">Bonecas Terapêuticas</a>
@@ -64,11 +68,14 @@
         <a href="#">Contato</a>
       </nav>
 
+      <!-- ✅ BUSCA (LINHA 2 NO MOBILE) -->
       <div class="busca">
         <input type="text" placeholder="Buscar...">
       </div>
 
+      <!-- ✅ AÇÕES (LINHA 3 NO MOBILE) -->
       <div class="acoes">
+
         <button class="btn-topo">
           <i class="bi bi-box-arrow-in-right"></i> Entrar
         </button>
@@ -76,14 +83,20 @@
         <button class="btn-topo">
           <i class="bi bi-person-plus"></i> Cadastrar
         </button>
+
+        <!-- ✅ HAMBÚRGUER AGORA NO LUGAR CORRETO -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          <i class="bi bi-list"></i>
+        </button>
+
       </div>
 
     </header>
 
   </div>
 
-  <!-- ✅ JS DO MENU MOBILE -->
-<script src="js/script.js"></script>
+  <!-- ✅ JS -->
+  <script src="js/script.js"></script>
 
 </body>
 </html>
