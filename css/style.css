@@ -17,6 +17,7 @@ body {
   align-items: center;
   padding: 5%;
   box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* ================= CAIXA INTERNA ================= */
@@ -44,8 +45,8 @@ body {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  padding: 0 28px;
   gap: 24px;
+  padding: 0 28px;
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   transition: all 0.4s ease;
@@ -61,10 +62,12 @@ body {
 .logo {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .logo img {
   width: 90px;
+  display: block;
 }
 
 /* ================= MENU ================= */
@@ -75,24 +78,25 @@ body {
   gap: 34px;
 }
 
-/* ✅ LINKS COM BORDA DO CENTRO */
+/* ================= LINKS COM BORDA ANIMADA ================= */
 .menu-principal a,
 .dropdown-btn {
   position: relative;
   border: none;
   background: transparent;
   color: var(--primary);
-  font-family: 'Quicksand';
   cursor: pointer;
   text-decoration: none;
   padding: 6px 0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
 }
 
 .menu-principal a::after,
 .dropdown-btn::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 50%;
   width: 0%;
   height: 2px;
@@ -154,6 +158,7 @@ body {
   padding: 8px 14px;
   border-radius: 10px;
   border: 1px solid var(--pinkCandy);
+  outline: none;
 }
 
 /* ================= BOTÕES ================= */
@@ -161,7 +166,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  position: relative;
+  justify-self: end;
 }
 
 .btn-topo {
@@ -171,7 +176,6 @@ body {
   background: var(--primary);
   color: white;
   cursor: pointer;
-  font-family: 'Quicksand';
   transition: 0.2s ease;
   font-weight: 600;
 }
@@ -184,16 +188,19 @@ body {
 /* ================= HAMBURGUER ================= */
 .menu-toggle {
   display: none;
-  font-size: 32px;
+  font-size: 28px;
   background: none;
   border: none;
   color: var(--primary);
   cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
 }
 
-/* ================= MOBILE FINAL AJUSTADO ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
+  /* header passa a ser 1 coluna (stacked) */
   .topo-fixo {
     grid-template-columns: 1fr;
     height: auto;
@@ -204,51 +211,73 @@ body {
     width: 90%;
   }
 
-  /* ✅ LOGO CENTRAL */
+  /* LOGO: linha única e centralizada */
   .logo {
     justify-content: center;
   }
-
   .logo img {
-    width: 110px;
+    width: 120px;
   }
 
-  /* ✅ BUSCA ABAIXO */
-  .busca {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .busca input {
-    width: 90%;
-  }
-
-  /* ✅ BOTÕES + HAMBURGUER NA MESMA LINHA */
-  .acoes {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-
-  /* ✅ MENU MOBILE */
+  /* MENU PRINCIPAL está escondido por padrão (menu via hambúrguer) */
   .menu-principal {
     display: none;
     flex-direction: column;
     width: 100%;
-    margin-top: 14px;
-    gap: 14px;
+    gap: 12px;
   }
-
   .menu-principal.ativo {
     display: flex;
   }
 
+  /* BUSCA: linha única e centralizada abaixo da logo */
+  .busca {
+    width: 100%;
+    justify-content: center;
+  }
+  .busca input {
+    width: 92%;
+    max-width: 640px;
+  }
+
+  /* AÇÕES: 3 elementos em uma linha: Entrar | Cadastrar | Hambúrguer */
+  /* Recomenda-se colocar o botão .menu-toggle DENTRO de .acoes no HTML. */
+  .acoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* espaço entre os 3 elementos */
+    align-items: center;
+    gap: 12px;
+    padding: 6px 4%;
+    box-sizing: border-box;
+  }
+
+  /* Se o .menu-toggle estiver fora de .acoes, garantimos que ele apareça alinhado à direita */
+  .topo-fixo > .menu-toggle {
+    display: block;
+    justify-self: end;
+  }
+
+  /* Estilo do botão hambúrguer quando dentro da .acoes */
+  .acoes .menu-toggle {
+    display: block;
+    margin-left: 6px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  /* botões com mais "respiro" */
+  .acoes .btn-topo {
+    flex: 0 0 auto;
+    min-width: 140px;
+  }
+
+  /* Remover blur (se estava presente) garantindo leitura limpa */
+  .inner.blur-applied {
+    filter: none !important;
+  }
+
+  /* shrink mantém auto no mobile */
   .topo-fixo.shrink {
     height: auto;
   }
